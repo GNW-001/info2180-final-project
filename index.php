@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // You'd put this code at the top of any "protected" page you create
 
 // Always start this first
@@ -9,7 +9,7 @@ if ( isset( $_SESSION['id'] ) ) {
     // Let them access the "logged in only" pages
 } else {
     // Redirect them to the login page
-    $("#homeB").trigger("click");
+    echo "<script> loadHome(); </script>";
 }
 ?>
 
@@ -18,12 +18,12 @@ if ( isset( $_SESSION['id'] ) ) {
     <head>
     
         <meta charset="utf-8">
-        <meta name="Resume" content="A resume of a software developer">
+        <meta name="VW" content="Buggy">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GW - R</title>
-      rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <script src="dynamic.js" type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
     </head>
         
     <body>
@@ -41,9 +41,12 @@ if ( isset( $_SESSION['id'] ) ) {
                 <button type="button" id="userB">Add User</button>
                 <button type="button" id="issueB">New Issue</button>
                 <button type="button" id="logoutB">Logout</button>
+                <p id="log">Logged in as <?= $_SESSION['name']?></p>
             </div>
             <div id="mainContent" class="grid-item2">
-                <p>Main Content</p>
+                <p>BugMe Issue Tracker is a simple issue tracking app that allows software development
+team members to log new feature proposals, tasks or bugs for a web app that they are
+currently working on. <br><br>Please select an opton provided by the menu to the left to proceed.</p>
             </div>
         </div>
     </body>
